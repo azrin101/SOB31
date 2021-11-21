@@ -17,32 +17,43 @@
 # Exams: 50, 51, 0
 # Average: 33
 # Grade: F
-# Student is failing.
+# Student iis failing.
 
 exam_one = int(input("Input exam grade one: "))
+
+# Add the int() function before input() function
 exam_two = int(input("Input exam grade two: "))
-exam_three = int(input("Input exam grade three: "))
 
-grade = exam_one+exam_two+exam_three
+# Add the str() function before the input() function
+exam_3 = int(input("Input exam grade three: "))
 
-avg = grade / 3
+# Add commas to seperate the values within the list and rename variable 'exam_three' to 'exam_3'
+grades = [exam_one, exam_two, exam_3]
+sum = 0
+for grade in grades:  # Rename 'grade' variable to 'grades'
+    sum = sum + grade
+
+avg = sum / len(grades)  # Rename 'grdes' to 'grades'
 
 if avg >= 90:
     letter_grade = "A"
-elif avg >= 80 and avg < 90:
+elif avg >= 80 and avg < 90:  # Added a ":" after 90
     letter_grade = "B"
 elif avg > 69 and avg < 80:
-    letter_grade = "C"
-elif avg <= 65 and avg >= 68:
+    letter_grade = "C"  # Replaced the single quote with a double quote
+elif avg <= 69 and avg >= 65:
     letter_grade = "D"
-else:
+else:  # Replaced elif statement with else statement
     letter_grade = "F"
 
-print("Exam: ", exam_one,", ",exam_two,", ",exam_three)
-print("Average: " + str(avg))
-print("Grade: " + letter_grade)
+for grade in grades:
+    print("Exam: " + str(grade))
 
-if letter_grade == "F":
-    print ("Student is failing.")
+    print("Average: " + str(avg))
+
+    print("Grade: " + letter_grade)
+
+if letter_grade == "F":  # Renamed 'letter-grade' varaible with 'letter_grade' and replaced 'is' operator with the '=='operator
+    print("Student is failing.")  # Added parenthesis
 else:
-    print ("Student is passing.")
+    print("Student is passing.")  # Added parenthesis
